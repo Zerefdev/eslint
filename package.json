@@ -1,19 +1,17 @@
 {
-  "name": "eslint",
+  "name": "dev",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "cd server && npm start",
-    "client": "cd client && npm start",
-    "start": "concurrently -n 'server,client' -c 'magenta,cyan'  \"npm run server\" \"npm run client\"",
+    "dev": "pm2-dev start ecosystem.dev.config.js",
+    "prod": "pm2 start ecosystem.prod.config.js",
     "lint": "npx eslint . --fix --ext .js,.vue"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^5.2.0",
     "eslint": "^7.2.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.21.1",
